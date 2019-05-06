@@ -20,7 +20,7 @@ class Sys_Db_Mapper
     {
         try 
         {
-            $conn = new PDO("mysql:host=$this->host;dbname=$this->base", $this->user, $this->pass);
+            $conn = new PDO("pgsql:host=$this->host;dbname=$this->base", $this->user, $this->pass);
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             
             $stmt = $conn->prepare($query);

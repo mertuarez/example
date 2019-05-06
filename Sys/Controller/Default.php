@@ -1,7 +1,7 @@
 <?php
 APP || die();
 
-class Sys_Controller_Default 
+abstract class Sys_Controller_Default 
 {
     /** @var Sys_Db_Mapper **/
     protected $mapper;
@@ -11,25 +11,8 @@ class Sys_Controller_Default
         $this->mapper = $mapper;
     }
 
-    public function View($name,$viewData=null)
-    {
-        $route = explode("_",get_class($this));
-        $layoutPath = "../View/_Shared/Layout.php";
-        $viewPath = "../View/".$route[2]."/".ucfirst($name).".php";
+    public abstract function Get($param);
 
-        if (file_exists($viewPath))
-        {
-            include_once($layoutPath);
-        }
-        else
-        {
-            throw new Exception("missing view");
-        }
-    }
-
-    public function __call($method,$args)
-    {
-        throw new Exception("missing action");
-    }
+    public abstract function Post($param);
 
 }

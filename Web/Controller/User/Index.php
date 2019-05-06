@@ -1,9 +1,9 @@
 <?php
 APP || die();
 
-class Web_Controller_User extends Sys_Controller_Default
+class Web_Controller_User_Index extends Sys_Controller_Default
 {
-    public function IndexAction() 
+    public function Get($param) 
     {
         
 
@@ -16,6 +16,12 @@ class Web_Controller_User extends Sys_Controller_Default
         //$this->mapper->UnMap("insert into users (id,firstname,lastname,created) values (:id,:firstname,:lastname,:created)", $x);
 
         $result = $this->mapper->Map("select * from users", "Web_Model_User");
-        return $this->View("index", $result);
+        return $result;
     }
+    
+    public function Post($param) 
+    {
+        return null;
+    }
+    
 }
