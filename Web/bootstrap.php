@@ -30,7 +30,6 @@ spl_autoload_register(function ($class) {
 });
 
 
-
 try
 {
     $route = explode('?',substr($_SERVER["REQUEST_URI"], strlen($url_prefix)))[0].'/';

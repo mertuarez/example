@@ -73,7 +73,7 @@ class Sys_Db_Mapper
 
             $conn = null;
 
-            //return $result;
+            return $object;
         }
         catch(PDOException $e)
         {
