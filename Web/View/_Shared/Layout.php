@@ -4,7 +4,7 @@
 </head>
 <body>
     <?php
-        include($viewPath);
+        include($view);
     ?>
 </body>
 </html>

@@ -66,7 +66,7 @@ try
     }
     
     //Render View
-    include_once $view;
+    include_once "Web/View/_Shared/Layout.php";
 } 
 catch (Exception $e)
 {
